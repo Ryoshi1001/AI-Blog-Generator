@@ -1,0 +1,12 @@
+body {
+  margin: 0px; 
+  padding: 0px; 
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; /* For WebKit browsers (Chrome, Safari) */
+  -moz-osx-font-smoothing: grayscale;  /* For Firefox on macOS */
+  image-rendering: -webkit-optimize-contrast; /* For images in WebKit browsers */
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

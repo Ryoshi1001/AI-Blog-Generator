@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'output.css' %}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body class="bg-gray-100 font-sans min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav
+      class="bg-blue-600 h-20 text-white flex flex-wrap items-center justify-between p-4"
+    >
+      <div class="">
+        <h1 class="font-bold text-3xl">AI Blog Generator</h1>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="login" class="hover:underline font-bold">Login</a>
+        <a href="signup" class="hover:underline font-bold">Signup</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="flex flex-grow items-center justify-center p-8">
+      <div class="bg-white max-w-md w-full rounded-lg shadow-md p-8">
+       
+        <form action="" method="POST" class="space-y-4 flex flex-col">
+         {% csrf_token %}
+
+
+          <!-- error for signup form -->
+          {% if error_message %}
+          <div style="text-align: center;">
+             <h2 style="color: red; font-weight: bold;">
+               {{ error_message }}
+             </h2>
+          </div>
+          {% endif %}
+
+          <h2 class="text-xl font-semibold">Login</h2>
+          <div>
+            <label for="username" class="mb-1 block font-medium"
+              >Username</label
+            >
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Enter Username...."
+              class="p-3 w-full border rounded outline-none"
+            />
+          </div>
+
+          <div>
+            <label for="password" class="mb-1 block font-medium"
+              >Password</label
+            >
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter Password...."
+              class="p-3 w-full border rounded outline-none"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 rounded-md text-white font-semibold py-3"
+          >
+            Login
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </body>
+</html>

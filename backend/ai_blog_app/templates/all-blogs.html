@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <link href="{% static './output.css' %}" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Blog Posts</title>
+  </head>
+  <body class="bg-gray-100 h-screen flex flex-col font-sans">
+    <!-- Navbar -->
+    <nav
+      class="bg-blue-600 h-20 text-white flex flex-wrap items-center justify-between p-4"
+    >
+      <div class="">
+        <h1 class="font-bold text-3xl">AI Blog Generator</h1>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="#" class="hover:underline font-bold">Login</a>
+        <a href="#" class="hover:underline font-bold">Signup</a>
+      </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="mx-auto flex-grow p-8">
+      <div class="bg-white max-w-3xl mx-auto w-full rounded-lg shadow-md p-8">
+        <!-- Blog Post Section -->
+        <section>
+          <h2 class="text-xl font-semibold mb-4">All Blog Posts</h2>
+          <div class="space-y-4">
+            <div class="border border-gray-300 p-4 rounded-md">
+              <h3 class="text-lg font-semibold">Blog Post Title 1</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Molestiae ullam porro quas maxime eligendi delectus fuga,
+                blanditiis distinctio quisquam voluptates omnis, minima
+                quibusdam exercitationem id odit! Eius quibusdam inventore
+                exercitationem....
+              </p>
+            </div>
+            <div class="border border-gray-300 p-4 rounded-md">
+              <h3 class="text-lg font-semibold">Blog Post Title 2</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Molestiae ullam porro quas maxime eligendi delectus fuga,
+                blanditiis distinctio quisquam voluptates omnis, minima
+                quibusdam exercitationem id odit! Eius quibusdam inventore
+                exercitationem....
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="text-center font-semibold p-4 text-black mt-4">
+      Powered by Code Html Css Python Django PostgresQL
+    </footer>
+  </body>
+</html>

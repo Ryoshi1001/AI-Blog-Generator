@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'output.css' %}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Blog Generator</title>
+    <style>
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @-webkit-keyframes rotate {
+        from {
+          -webkit-transform: rotate(0deg);
+        }
+        to {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      .load {
+        width: 100px;
+        height: 100px;
+        margin: 110px auto 0;
+        border: solid 10px #8822aa;
+        border-radius: 50%;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        -webkit-transition: all 0.5s ease-in;
+        -webkit-animation-name: rotate;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+
+        transition: all 0.5s ease-in;
+        animation-name: rotate;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 h-screen flex flex-col font-sans">
+
+    <!-- Navbar -->
+    <nav
+      class="bg-blue-600 text-white flex flex-wrap items-center justify-between p-4"
+    >
+      <div class="">
+        <h1 class="font-bold text-3xl">AI Blog Generator</h1>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <p class="hover:underline font-bold inline-block">Welcome {{user.username}}</p>
+        <a href='logout' class="hover:underline font-bold inline-block">Logout</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="mx-auto flex-grow p-8">
+      <div
+        class="p-8 bg-white rounded-lg max-w-3xl shadow-sm transform-translate transform hover:scale-105"
+      >
+        <!-- Intro -->
+        <div class="text-center flex flex-col gap-3">
+          <h2 class="text-2xl font-bold">Welcome to the AI Blog Generator</h2>
+          <p class="text-gray-700">
+            Generate high-quality blog articles from YouTube videos using
+            artificial intelligence. Simply enter the link to the YouTube video
+            below and let the AI create the content for you!
+          </p>
+        </div>
+
+        <!-- Youtube Section -->
+        <div class="mt-4">
+          <h2 class="mb-4 text-xl font-semibold">Enter Youtube Video Link</h2>
+          <div class="flex flex-row gap-3">
+            <input
+              id="youtubeLink"
+              type="url"
+              class="border border-gray-400 rounded-l p-2 flex-grow outline-none"
+              placeholder="Paste Youtube Link URL . . . ."
+            />
+            <button
+              id="generateBlogButton"
+              class="bg-blue-600 px-4 py-3 text-white font-semibold rounded-r-md cursor-pointer hover:bg-blue-700 transition-colors"
+            >
+              Generate
+            </button>
+          </div>
+        </div>
+
+        <!-- Section for Loading Circle -->
+        <div id="loading-circle" class="load" style="display: none"></div>
+
+        <!-- Generated Blog Display Section -->
+        <section class="mt-8 flex-grow">
+          <h2 class="text-xl font-semibold">Generated Blog Article</h2>
+          <div id="blogContent" class="mt-2 text-gray-700 space-y-4"></div>
+        </section>
+      </div>
+
+   
+    </main>
+
+    <footer class="text-center font-semibold p-4 text-black mt-4">
+      Powered by Code Html Css Python Django PostgresQL
+    </footer>
+
+    <script src="{% static '/js/index.js'%}"></script>
+  </body>
+</html>
+
+
